@@ -7,6 +7,9 @@ import IconButton from '@mui/material/IconButton'
 import Container from '@mui/material/Container';
 // import './Header.scss'
 import Menu from 'components/Menu/Menu'
+import logo from 'assets/logo.svg'
+import CartHeader from 'components/CartHeader/CartHeader'
+
 
 type Props = {}
 
@@ -30,7 +33,12 @@ const Header = (props: Props) => {
                     News
                 </Typography>
                 {/* <Button color="inherit">Login</Button> */}
+            <div className='logo'>
+                <img src="" alt="" />
+            </div>
             <Menu/>
+            <CartHeader/>
+
             </Toolbar>
             </Container>
         </AppBar>
