@@ -27,3 +27,31 @@
     justify-content: center;
     
 }
+.product-img {
+    text-align: center;
+    margin-bottom: 15px;
+
+    img {
+        width: 150px;
+        height: auto;
+    }
+}
+.product-quantity {
+    display: flex;
+    margin: 15px 0;
+    input {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
