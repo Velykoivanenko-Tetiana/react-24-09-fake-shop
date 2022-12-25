@@ -2,7 +2,8 @@ import { Grid } from '@mui/material'
 import ProductsListItem from './ProductsListItem'
 import productsArray from './productsArray'
 type Props = {
-   
+  addProductToCart:(total:number,price:number)=>void
+
 }
 type ProductsProps ={
   id:number
@@ -16,7 +17,7 @@ type ProductsProps ={
 }
 
 
-const ProductsList = (props: Props) => {
+const ProductsList = ({addProductToCart}: Props) => {
   return (
     <>
     <Grid container direction="row" alignItems="center" spacing={4}>
@@ -37,6 +38,7 @@ const ProductsList = (props: Props) => {
                             capacity={capacity}
                             price={price}
                             image={image}
+                            addProductToCart={addProductToCart}
                         />
                     </Grid>
                 ))}

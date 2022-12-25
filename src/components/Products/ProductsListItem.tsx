@@ -8,7 +8,7 @@ type Props = {   title: string
     capacity:string
     price:number
     image:string
-
+    addProductToCart:(total:number,price:number)=>void
 }
 const ProductsListItem = ({
     title,
@@ -16,7 +16,8 @@ const ProductsListItem = ({
     type,
     capacity,
     price,
-    image
+    image,
+    addProductToCart,
 }: Props) => {
     const[count, setCount] = useState<number>(1)
     const[color, setColor] = useState<string>('green')
@@ -57,7 +58,8 @@ const ProductsListItem = ({
             </CardContent>
 
             <CardActions className="btns-wrap">
-                <Button variant="outlined">Add to cart</Button>
+                <Button variant="outlined"
+                onClick={()=>addProductToCart(count,price)}>Add to cart</Button>
             </CardActions>
         </Card>
 
