@@ -1,5 +1,6 @@
 import { Card, CardActions, CardContent, Button,TextField } from '@mui/material'
 import './ProductsListItem.scss'
+import{useState} from 'react'
 
 type Props = {   title: string
     desc: string
@@ -17,6 +18,27 @@ const ProductsListItem = ({
     price,
     image
 }: Props) => {
+    const[count, setCount] = useState<number>(1)
+    const[color, setColor] = useState<string>('green')
+    const onIncrement = ()=>{
+        setCount((prevState:number)=> prevState+1)
+    }
+
+    const onDecrement = ()=>{
+        setCount((prevState:number)=> prevState-1)
+    }
+    const changeColor = () => {
+    setColor((prevState:string)=>{
+        if(prevState === 'green'){
+            return 'red'
+        }
+        else{
+            return 'green'
+        }
+
+    }
+        )
+    }
     return (
         <Card className="product-list-item">
             <CardContent>
@@ -32,10 +54,13 @@ const ProductsListItem = ({
                     <span>Capacity:</span> {capacity} gb
                 </div>
                 <div className="product-price">{price}$ </div>
+                <p>Color: green</p>
+                <button onClick={()=>changeColor()}>Change color</button>
+
                 <div className="product-quantity">
-                    <Button variant="outlined">-</Button>
-                    <TextField size="small" value="1" />
-                    <Button variant="outlined">+</Button>
+                    <Button variant="outlined"onClick={()=>onDecrement()}>-</Button>
+                    <TextField size="small" value={count}/>
+                    <Button variant="outlined" onClick={()=>onIncrement()}>+</Button>
                 </div>
 
             </CardContent>
