@@ -1,15 +1,15 @@
 type Props = {
-    cartData:{
-    totalCount:number
-    totalPrice:number
+    productsInCart:{
+        [id:number]:number
+    }
 }
-}
-const CartHeader = ({cartData}: Props) => {
-    return (
-        <div>
-            <div>{cartData.totalCount}</div>
-            <div>{cartData.totalPrice}</div>
+const CartHeader = ({productsInCart}: Props) => {
+    return (<div> {Object.keys(productsInCart).map((productId) => (
+        <div key={productId}>
+            {productId} : {productsInCart[parseInt(productId)]}
         </div>
-    )
-}
+    ))}
+    </div>
+    )}
+
 export default CartHeader
