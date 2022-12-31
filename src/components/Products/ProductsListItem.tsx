@@ -2,7 +2,9 @@ import { Card, CardActions, CardContent, Button,TextField } from '@mui/material'
 import './ProductsListItem.scss'
 import{useState} from 'react'
 
-type Props = {   title: string
+type Props = {  
+    id:number
+    title: string
     desc: string
     type:string
     capacity:string
@@ -11,6 +13,7 @@ type Props = {   title: string
     addProductToCart:(total:number,price:number)=>void
 }
 const ProductsListItem = ({
+    id,
     title,
     desc,
     type,
@@ -59,7 +62,7 @@ const ProductsListItem = ({
 
             <CardActions className="btns-wrap">
                 <Button variant="outlined"
-                onClick={()=>addProductToCart(count,price)}>Add to cart</Button>
+                onClick={()=>addProductToCart(id,count)}>Add to cart</Button>
             </CardActions>
         </Card>
 
