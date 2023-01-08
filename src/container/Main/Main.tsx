@@ -1,5 +1,7 @@
 import Container from '@mui/material/Container'
+import CartPage from 'pages/CartPage/CartPage'
 import Home from 'pages/Home/Home'
+import { Route, Routes } from 'react-router-dom'
 
 
 type Props = {
@@ -13,6 +15,16 @@ const Main = ({addProductToCart}: Props) => {
         padding:'40px 0',
     }}>
     <Container maxWidth='lg'>
+      <Routes>
+        <Route 
+        path="/"
+        element={< Home addProductToCart={addProductToCart} />}
+        />
+        <Route 
+        path="cart"
+        element={<CartPage/>}
+        />
+      </Routes>
     <Home addProductToCart={addProductToCart}/>
     </Container>
     </main>
