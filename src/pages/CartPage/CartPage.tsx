@@ -21,6 +21,7 @@ const CartPage = ({
             >
                 Cart
             </Typography>
+            <Grid container spaising={4}></Grid>
             <CartProductsList productsInCart ={productsInCart}/>
             <CartTotal productsInCart={productsInCart}/>
         </div>
