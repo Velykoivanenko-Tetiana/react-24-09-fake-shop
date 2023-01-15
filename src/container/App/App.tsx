@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 import Main from'container/Main/Main'
 import {useState} from 'react'
+import {omit} from 'lodash'
 
 
 
@@ -25,13 +26,15 @@ const App = () => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState: ProductsInCart) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState: ProductsInCart) => omit(prevState, [id]))
     }
-
+  
+    const changeProductQuantity = (id:number,count:number)=>{
+        setProductsInCart((prevState:ProductsInCart)=>({
+            ...prevState,
+            [id]:count,
+        }))
+    }
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -40,8 +43,11 @@ const App = () => {
                 Remove Product
             </button>
 
-            <Main addProductToCart={addProductToCart} 
+            <Main 
+            addProductToCart={addProductToCart}
             productsInCart={productsInCart}
+            removeProductFromCart={removeProductFromCart}
+            changeProductQuantity={changeProductQuantity}
             />
         </StyledEngineProvider>
     )
