@@ -12,7 +12,7 @@ const Quantity = ({count,onDecrement,onIncrement,minCount=1}: Props) => {
   return (
     <div className="product-quantity">
                     <Button variant="outlined"onClick={()=>onDecrement()}
-                    disabled={count<=1}>-</Button>
+                    disabled={count<=minCount}>-</Button>
                     <TextField size="small" value={count}/>
                     <Button variant="outlined" onClick={()=>onIncrement()}
                     disabled={count>=10}>+</Button>

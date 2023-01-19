@@ -37,7 +37,7 @@ const CartProductsListItemExtended = ({ product, productCount,removeProductFromC
               />
                     <Button variant='outlined' 
                     onClick={()=>removeProductFromCart(product.id)}>
-                        <DeleteIcon />
+                        {/* <DeleteIcon /> */}
                     </Button>
                 </CardContent>
             </Card>
