@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
-// import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import './Header.scss'
 import Menu from 'components/Menu/Menu'
@@ -11,13 +11,8 @@ import logo from 'assets/logo.svg'
 import CartHeader from 'components/CartHeader/CartHeader'
 
 
-type Props = {
-    productsInCart:{
-        [id:number]:number
-    }
-}
 
-const Header = ({productsInCart}: Props) => {
+const Header = () => {
   return (
     <AppBar position="static"
     className="app-bar"    >
@@ -40,7 +35,7 @@ const Header = ({productsInCart}: Props) => {
                 <img src={logo} alt="Logo" />
             </div>
             <Menu/>
-            <CartHeader productsInCart={productsInCart}/>
+            <CartHeader/>
 
             </Toolbar>
             </Container>
