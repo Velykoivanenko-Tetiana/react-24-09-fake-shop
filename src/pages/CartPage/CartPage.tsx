@@ -3,6 +3,7 @@ import CartProductsList from 'components/CartProductsList/CartProductsList'
 import CartTotal from 'components/CartTotal/CartTotal'
 import CartProductsListItemExtended from 'components/CartProductsList/CartProductsListItemExtended'
 import { useAppSelector } from 'redux/hooks'
+import { Link } from 'react-router-dom'
 
 const CartPage = () => {
     const productsInCart = useAppSelector((state) => state.productsInCart)
@@ -25,6 +26,7 @@ const CartPage = () => {
            
           </Grid>
           <CartTotal productsInCart={productsInCart}/>  
+          <Link to="/checkout">Proceed to checkout</Link>
         </div>
     )
 }

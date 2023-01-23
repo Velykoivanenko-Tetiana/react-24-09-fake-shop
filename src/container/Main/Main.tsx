@@ -5,6 +5,7 @@ import PaymentPage from 'pages/PaymentPage/PaymentPage'
 import ShippingPage from 'pages/ShippingPage/ShippingPage'
 import Home from 'pages/Home/Home'
 import { Route, Routes } from 'react-router-dom'
+import CheckoutPage from 'pages/CheckoutPage/CheckoutPage'
 
 
 const Main = () => {
@@ -20,6 +21,7 @@ const Main = () => {
         <Route path="about" element={<AboutPage/>} />
         <Route path="payment" element={<PaymentPage/>} />
         <Route path="shipping" element={<ShippingPage/>} />
+        <Route path="checkout" element={<CheckoutPage/>} />
       </Routes>
     </Container>
     </main>
