@@ -1,5 +1,5 @@
 import { Button, Card, CardContent, Grid } from '@mui/material'
-import productsArray, { ProductsProps } from 'components/Products/productsArray'
+import  { ProductsProps } from 'components/Products/productsArray'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Quantity from 'components/Quantity/Quantity'
 import { useAppDispatch } from 'redux/hooks'
@@ -19,9 +19,9 @@ const CartProductsListItemExtended = ({
             <Card variant='outlined'>
                 <CardContent>
                     <div className="product-img">
-                        <img src={product.image} alt={product.title} />
+                        <img src={product.image} alt={product.name} />
                     </div>
-                    <div>{product.title}</div>
+                    <div>{product.name}</div>
                     <p>Price for one item: {product.price}</p>
                     <p>Count: {productCount}</p>
                     <Quantity 

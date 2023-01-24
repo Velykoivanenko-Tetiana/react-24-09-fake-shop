@@ -5,10 +5,7 @@ type CartState = {
     [id:number]:number
 }
 
-export const initialState:CartState = {
-    1:3,
-    2:3
-}
+export const initialState:CartState = {}
 
 
 export const cartSlice  = createSlice({

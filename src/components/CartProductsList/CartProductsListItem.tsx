@@ -8,7 +8,7 @@ const CartProductsListItem = ({product, productCount}: Props) => {
     return
 (
     <div>
-        {product.title}:{productCount}
+        {product.name}:{productCount}
     </div>
 )}
 export default CartProductsListItem
